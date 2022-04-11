@@ -1,0 +1,216 @@
+/* font-family: 'Allura', cursive;
+font-family: 'Gabriela', serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif; */
+
+@font-face {
+  font-family: "Gabriola";
+  src: url("../font/Gabriola.ttf");
+}
+
+p,
+span {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+
+#rose {
+  display: flex;
+  justify-content: center;
+}
+
+.container-width {
+  position: relative;
+  width: 768px;
+  max-width: 768px;
+}
+
+.section-bg {
+  background: url(../img/bg.png);
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 0.5em;
+}
+
+.main {
+  min-height: 100vh;
+  width: 100%;
+  background: #797979;
+}
+.container-section {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 20px 20px 80px;
+  display: grid;
+}
+
+.ornamnet-bawah {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.ornamnet-bawah img {
+  bottom: 0;
+  margin-bottom: 20px;
+  width: 270px;
+}
+/* ======================== banner ======================== */
+#banner {
+  margin-top: 0px !important;
+}
+
+.ornament-kanan {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: -30px;
+  margin-top: -25px;
+  width: 150px;
+  z-index: 9;
+}
+
+.ornament-kiri {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: -30px;
+  margin-top: -25px;
+  width: 150px;
+  z-index: 9;
+}
+
+.banner-photo {
+  width: 100%;
+  height: 100%;
+  background: #cccccc;
+  position: relative;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: #00000085;
+}
+
+.banner-content {
+  width: 100%;
+  height: 100%;
+  border: 3px solid #ffffff;
+}
+
+.banner-content h2 {
+  font-family: "Allura", cursive;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: normal;
+  padding: 40px 0px 10px;
+  margin-top: 0;
+}
+
+.banner-content p {
+  color: #ffffff;
+  font-family: "Josefin Sans", sans-serif;
+}
+/* ======================== akhir banner ======================== */
+/* ======================== pengantin ======================== */
+#pengantin .container-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-pengantin {
+  width: 150px;
+  object-fit: cover;
+  height: 150px;
+  border-radius: 90px;
+  margin-top: 9px;
+  padding: 5px;
+  border: 3px solid #f4d8ba;
+}
+/* ======================== akhir pengantin ======================== */
+/* ======================== waktu ======================== */
+#waktu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.waktu-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.waktu-content {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid #c19e67;
+}
+
+.separator-tengah {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2px;
+  height: 100%;
+  background-color: #b7ba83;
+}
+
+
+.button-waktu button {
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/* ======================== akhir waktu ======================== */
+/* ======================== navbar ======================== */
+.navbar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #c19e67;
+  z-index: 10;
+  overflow: auto;
+  white-space: nowrap;
+}
+.navbar-container .navbar-menu {
+  display: inline-block;
+  width: 85px;
+  text-align: center;
+  font-weight: 700 !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 7px;
+  padding: 13px 10px 5px;
+  color: #dac9c9;
+}
+
+.navbar-container .navbar-menu i {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+/* ======================== akhir navbar ======================== */
