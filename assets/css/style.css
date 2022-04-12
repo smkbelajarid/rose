@@ -561,6 +561,32 @@ span {
 }
 
 /* ======================== akhir buku tamu ======================== */
+/* ======================== lagu ======================== */
+.song-panel {
+  position: fixed;
+  bottom: 70px;
+  right: 0;
+  z-index: 999;
+}
+
+.song-panel button {
+  border: none;
+  background: #ffffff;
+  padding: 5px 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: none;
+}
+
+.song-panel button.active {
+  display: block;
+}
+
+.song-panel audio {
+  display: none;
+}
+/* ======================== akhir lagu ======================== */
 /* ======================== navbar ======================== */
 .navbar-container {
   position: fixed;
@@ -572,6 +598,12 @@ span {
   overflow: auto;
   white-space: nowrap;
 }
+
+.navbar-container .navbar-menu.active {
+  background: #f4d8ba;
+  color: #c19e67;
+}
+
 .navbar-container .navbar-menu {
   display: inline-block;
   width: 85px;
