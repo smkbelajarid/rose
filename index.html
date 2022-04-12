@@ -26,29 +26,44 @@
     <title>Contoh Undangan Pernikahan Hindu Bali Paket Gold Desain Rose</title>
   </head>
   <body>
-    <!-- <div id="cover">
-      <div class="cover-container">
-          <div class="cover-content">
+    <div id="cover">
+      <div class="container-width">
+        <section id="landing">
+          <div class="box-ornament-atas">
+            <img src="assets/img/ornament.png" alt="" class="ornament-cover-atas">
+          </div>
+          <div class="container-cover">
+            <div class="cover-content">
               <div class="cover-title">
                   <h1>UNDANGAN PERNIKAHAN</h1>
               </div>
-              <div class="cover-ornamnet-atas">
-                  <img src="assets/img/ornament-cover-atas.png">
+              <div class="pengantin-box">
+                <h3>Romeo</h3>
+              </div>
+
+              <div class="cincin">
+                <img src="https://www.weddingku.id/wp-content/themes/weddingku/rose/assets/img/ring.png" alt="" />
+              </div>
+
+              <div class="pengantin-box">
+                <h3>Juliet</h3>
               </div>
               <div class="text-center p-2">							
                   <p class="text-dari">Kepada Yth : </p>
-                  <h1 class="text-untuk">Danta</h1>
+                  <h1 class="text-untuk">kevin</h1>
                   <span>( Denpasar )</span>
-              </div>
-              <div class="cover-ornamnet-bawah">
-                  <img src="assets/img/ornament-cover-bawah.png">
               </div>
               <button id="btn-cover">
                   BUKA UNDANGAN
               </button>
             </div>
-        </div>
-    </div> -->
+          </div>
+          <div class="box-ornament-bawah">
+            <img src="assets/img/ornament.png" alt="" class="ornament-cover-atas">
+          </div>
+        </section>
+      </div>
+    </div>
     <div id="rose">
       <div class="container-width">
         <div class="main">
@@ -456,16 +471,12 @@
           </section>
         </div>
       </div>
-    
-      <div class="song-panel">
-        <button class="song-play active" id="song-play" onClick="StartOrStopSongs('mute');"><i class="fa fa-volume-up"></i></button>
-        <button class="song-mute" id="song-mute" onClick="StartOrStopSongs('play');"><i class="fa fa-volume-off"></i></button>
-        <audio id="wed-songs" controls loop>
+      <!-- musik -->
+      <div class="m-0 p-0 border-0" id="btn-music"><i class="fa fa-volume-up"></i></div>
+        <audio id="player" controls loop>
           <source src="assets/audio/RonanKeating-WhenYouSayNothingAtAll.mp3" type="audio/ogg">
           <source src="assets/audio/RonanKeating-WhenYouSayNothingAtAll.mp3" type="audio/mpeg">
         </audio>
-      </div>
-
       <!-- navbar -->
       <div class="navbar-container">
         <a href="#banner" class="navbar-menu active">

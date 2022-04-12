@@ -1,48 +1,73 @@
 $(document).ready(function () {
-  $("#holy").hide();
-  // $("#resepsi").hide();
+  $("#rose").hide();
 
   // // jika button cover di klik
   $("#btn-cover").click(function () {
-    $("#holy").show();
+    $("#rose").show();
     $("#cover").hide();
   });
 
-  // ==================== maps =====================
+  // ==================== default =====================
   $(".btn-resepsi").css("color", "#7e7e7e");
+  $(".btn-waktu-resepsi").css("color", "#7e7e7e");
   $("#maps-resepsi").hide();
 
+  // ==================== btn waktu =====================
+  $(".btn-waktu-resepsi").click(function () {
+    $(".btn-waktu-resepsi").css("color", "#000000");
+    $(".btn-waktu-pernikahan").css("color", "#7e7e7e");
+  });
+
+  $(".btn-waktu-pernikahan").click(function () {
+    $(".btn-waktu-pernikahan").css("color", "#000000");
+    $(".btn-waktu-resepsi").css("color", "#7e7e7e");
+  });
+
+  // ==================== btn pernikahan & respsi =====================
   $(".btn-resepsi").click(function () {
     $(".btn-pernikahan").css("color", "#7e7e7e");
+    $(".btn-waktu-pernikahan").css("color", "#7e7e7e");
     $(".btn-resepsi").css("color", "#000000");
+    $(".btn-waktu-resepsi").css("color", "#000000");
     $("#maps-resepsi").show();
     $("#maps-pernikahan").hide();
   });
 
   $(".btn-pernikahan").click(function () {
     $(".btn-resepsi").css("color", "#7e7e7e");
+    $(".btn-waktu-resepsi").css("color", "#7e7e7e");
     $(".btn-pernikahan").css("color", "#000000");
+    $(".btn-waktu-pernikahan").css("color", "#000000");
     $("#maps-pernikahan").show();
     $("#maps-resepsi").hide();
   });
 
-  StartOrStopSongs();
+  // ==================== music =====================
+  var btnLanding = document.getElementById("btn-cover");
+  var btnMusic = document.getElementById("btn-music");
+  var audio = document.getElementById("player");
 
-  function StartOrStopSongs(status) {
-    var audio = document.getElementById("wed-songs");
-    var btnSongPlay = document.getElementById("song-play");
-    var btnSongMute = document.getElementById("song-mute");
+  audio.loop = true;
 
-    if (status == "mute") {
-      audio.pause();
-      btnSongPlay.classList.remove("active");
-      btnSongMute.classList.add("active");
-    } else {
+  btnLanding.addEventListener("click", function () {
+    if (audio.paused) {
       audio.play();
-      btnSongMute.classList.remove("active");
-      btnSongPlay.classList.add("active");
+      btnLanding.innerHTML = '<i class="fa fa-volume-up"></i>';
     }
-  }
+    return false;
+  });
+
+  btnMusic.addEventListener("click", function () {
+    if (audio.paused) {
+      audio.play();
+      btnMusic.innerHTML = '<i class="fa fa-volume-up"></i>';
+    } else {
+      audio.pause();
+      btnMusic.innerHTML = '<i class="fa fa-volume-off"></i>';
+    }
+
+    return false;
+  });
 
   windowScrollMainNav();
 
@@ -83,19 +108,13 @@ $(document).ready(function () {
 
   // ==================== acara =====================
   $(".btn-waktu-resepsi").on("click", function () {
-    $("#acara #acara-scroll .acara-detail").css(
-      "transform",
-      "translateX(" + -250 + "px)"
-    );
+    $("#acara #acara-scroll .acara-detail").css("transform", "translateX(" + -250 + "px)");
     $("#btn-waktu-pernikahan").removeClass("active");
     $(this).addClass("active");
     console.log("ok");
   });
   $(".btn-waktu-pernikahan").on("click", function () {
-    $("#acara #acara-scroll .acara-detail").css(
-      "transform",
-      "translateX(" + 0 + "px)"
-    );
+    $("#acara #acara-scroll .acara-detail").css("transform", "translateX(" + 0 + "px)");
     $("#btn-waktu-resepsi").removeClass("active");
     $(this).addClass("active");
   });
@@ -144,20 +163,14 @@ var platform = new H.service.Platform({
 });
 var defaultLayers = platform.createDefaultLayers();
 var maptypes = platform.createDefaultLayers();
-var map = new H.Map(
-  document.getElementById("maps-container-pernikahan"),
-  maptypes.normal.map,
-  {
-    zoom: 14,
-    center: {
-      lng: 115.244156,
-      lat: -8.644065,
-    },
-  }
-);
-var icon = new H.map.Icon(
-  "https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png"
-);
+var map = new H.Map(document.getElementById("maps-container-pernikahan"), maptypes.normal.map, {
+  zoom: 14,
+  center: {
+    lng: 115.244156,
+    lat: -8.644065,
+  },
+});
+var icon = new H.map.Icon("https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png");
 var marker = new H.map.Marker(
   {
     lat: -8.644065,
@@ -179,20 +192,14 @@ var platform = new H.service.Platform({
 });
 var defaultLayers = platform.createDefaultLayers();
 var maptypes = platform.createDefaultLayers();
-var map = new H.Map(
-  document.getElementById("maps-container-resepsi"),
-  maptypes.normal.map,
-  {
-    zoom: 14,
-    center: {
-      lng: 115.241769,
-      lat: -8.636873,
-    },
-  }
-);
-var icon = new H.map.Icon(
-  "https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png"
-);
+var map = new H.Map(document.getElementById("maps-container-resepsi"), maptypes.normal.map, {
+  zoom: 14,
+  center: {
+    lng: 115.241769,
+    lat: -8.636873,
+  },
+});
+var icon = new H.map.Icon("https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png");
 var marker = new H.map.Marker(
   {
     lat: -8.636873,

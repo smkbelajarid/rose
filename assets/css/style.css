@@ -75,6 +75,100 @@ span {
   padding: 90px 0px;
 }
 /* ======================== banner ======================== */
+/* ======================== cover ======================== */
+
+#cover {
+  display: flex;
+  justify-content: center;
+}
+
+#landing {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  background: url(../img/bg.png);
+  background-size: cover;
+  z-index: 999;
+  min-height: 100vh;
+  width: 100%;
+  transition: opacity 1s ease-in-out;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-ornament-atas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.box-ornament-bawah {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transform: rotate(180deg);
+}
+
+.cover-content {
+  text-align: center;
+}
+
+.ornament-cover-atas {
+  transform: rotate(180deg);
+  margin-top: -20px;
+  width: 300px;
+}
+
+.cover-title h1 {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 500;
+  margin: 0px;
+}
+
+#cover h3 {
+  margin: 0px;
+  margin-top: -10px;
+}
+
+.text-dari {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  margin-top: -10px;
+}
+
+.text-untuk {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  margin: -10px 0px 0px 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.cover-content span {
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+}
+
+#btn-cover {
+  background: #c19e67;
+  border: none;
+  color: #ffffff;
+  padding: 5px 25px;
+  font-family: Montserrat_Semi_Bold;
+  font-size: 12px;
+}
+/* ======================== akhir cover ======================== */
 #banner .container-banner {
   position: absolute;
   z-index: 10;
@@ -351,7 +445,7 @@ span {
 
 #maps-pernikahan,
 #maps-resepsi {
-  width: 100%;
+  width: 100% !important;
 }
 
 .btn-pernikahan,
@@ -381,10 +475,15 @@ span {
 }
 
 .maps-container {
-  width: 100%;
-  height: 500px;
+  width: 100% !important;
+  height: 500px !important;
   padding: 15px;
   border: 1.5px solid #c19e67 !important;
+}
+
+.maps-container canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 /* ======================== akhir maps ======================== */
 /* ======================== video ======================== */
@@ -562,28 +661,22 @@ span {
 
 /* ======================== akhir buku tamu ======================== */
 /* ======================== lagu ======================== */
-.song-panel {
-  position: fixed;
-  bottom: 70px;
-  right: 0;
-  z-index: 999;
-}
 
-.song-panel button {
+#btn-music {
   border: none;
-  background: #ffffff;
+  background: transparent;
   padding: 5px 10px;
   width: 40px;
   height: 40px;
   font-size: 20px;
-  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 0;
+  z-index: 999;
+  cursor: pointer;
 }
 
-.song-panel button.active {
-  display: block;
-}
-
-.song-panel audio {
+#player {
   display: none;
 }
 /* ======================== akhir lagu ======================== */
