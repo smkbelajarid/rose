@@ -456,10 +456,19 @@
           </section>
         </div>
       </div>
+    
+      <div class="song-panel">
+        <button class="song-play active" id="song-play" onClick="StartOrStopSongs('mute');"><i class="fa fa-volume-up"></i></button>
+        <button class="song-mute" id="song-mute" onClick="StartOrStopSongs('play');"><i class="fa fa-volume-off"></i></button>
+        <audio id="wed-songs" controls loop>
+          <source src="assets/audio/RonanKeating-WhenYouSayNothingAtAll.mp3" type="audio/ogg">
+          <source src="assets/audio/RonanKeating-WhenYouSayNothingAtAll.mp3" type="audio/mpeg">
+        </audio>
+      </div>
 
       <!-- navbar -->
       <div class="navbar-container">
-        <a href="#banner" class="navbar-menu">
+        <a href="#banner" class="navbar-menu active">
           <i class="fa fa-envelope-open-o"></i>
           <br />
           SAMPUL
