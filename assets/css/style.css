@@ -149,10 +149,14 @@ span {
 .text-untuk {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  margin: -10px 0px 0px 0px;
+  margin: -10px auto 0px;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.1em;
+  padding-bottom: 5px;
+  width: 80px;
+  display: block;
+  border-bottom: 1.5px solid #f4d8ba;
 }
 
 .cover-content span {
@@ -165,7 +169,8 @@ span {
   border: none;
   color: #ffffff;
   padding: 5px 25px;
-  font-family: Montserrat_Semi_Bold;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   font-size: 12px;
 }
 /* ======================== akhir cover ======================== */
@@ -500,6 +505,7 @@ span {
 
 .video-container {
   height: 500px;
+  width: 100%;
 }
 /* ======================== akhir video ======================== */
 /* ======================== gallery ======================== */
