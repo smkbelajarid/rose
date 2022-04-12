@@ -8,7 +8,6 @@ font-family: 'Open Sans', sans-serif; */
   font-family: "Gabriola";
   src: url("../font/Gabriola.ttf");
 }
-
 p,
 span {
   font-size: 14px;
@@ -40,17 +39,6 @@ span {
   width: 100%;
   background: #797979;
 }
-.container-section {
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  padding: 20px 20px 80px;
-  display: grid;
-}
-
 .ornamnet-bawah {
   position: fixed;
   bottom: 0;
@@ -65,19 +53,40 @@ span {
   margin-bottom: 20px;
   width: 270px;
 }
-/* ======================== banner ======================== */
-#banner {
-  margin-top: 0px !important;
+
+.judul {
+  font-family: "Allura", cursive;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 30px;
+  color: #c19e67;
 }
 
-.ornament-kanan {
-  position: fixed;
+.container-section {
+  width: 100% !important;
+  min-height: 100vh !important;
+  padding: 20px 20px 80px !important;
+  position: relative !important;
+  display: grid !important;
+}
+
+.content-box {
+  width: 100%;
+  padding: 90px 0px;
+}
+/* ======================== banner ======================== */
+#banner .container-banner {
+  position: absolute;
+  z-index: 10;
   top: 0;
-  right: 0;
-  margin-right: -30px;
-  margin-top: -25px;
-  width: 150px;
-  z-index: 9;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 20px 20px 80px;
+}
+
+#banner {
+  margin-top: 0px !important;
 }
 
 .ornament-kiri {
@@ -89,21 +98,42 @@ span {
   width: 150px;
   z-index: 9;
 }
+.ornament-kanan {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: -30px;
+  margin-top: -25px;
+  width: 150px;
+  z-index: 9;
+}
+.ornament-bawah {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.ornament-bawah img {
+  bottom: 0;
+  margin-bottom: 20px;
+  width: 270px;
+}
 
-.banner-photo {
+.banner-box {
   width: 100%;
   height: 100%;
   background: #cccccc;
   position: relative;
 }
-
-.banner-img {
+.banner-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.banner-box {
+.banner-content-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -117,6 +147,7 @@ span {
   width: 100%;
   height: 100%;
   border: 3px solid #ffffff;
+  text-align: center;
 }
 
 .banner-content h2 {
@@ -134,11 +165,6 @@ span {
 }
 /* ======================== akhir banner ======================== */
 /* ======================== pengantin ======================== */
-#pengantin .container-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .img-pengantin {
   width: 150px;
   object-fit: cover;
@@ -148,45 +174,393 @@ span {
   padding: 5px;
   border: 3px solid #f4d8ba;
 }
-/* ======================== akhir pengantin ======================== */
-/* ======================== waktu ======================== */
-#waktu {
+
+.content-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-.waktu-box {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  padding: 20px;
+}
+.pengantin-content-width {
+  width: 300px;
 }
 
-.waktu-content {
+.pengantin-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pengantin-box h3 {
+  margin-top: 15px;
+  font-family: Gabriola;
+  text-transform: none;
+  font-size: 30px;
+  color: #c19e67;
+}
+
+.pengantin-box p {
+  margin-top: 5px;
+  font-family: "Montserrat", sans-serif;
+  color: #7a4b01;
+  font-size: 12px;
+}
+
+.cincin {
+  display: flex;
+  justify-content: center;
+}
+/* ======================== akhir pengantin ======================== */
+/* ======================== waktu ======================== */
+#acara {
+  text-align: center;
+}
+
+#acara .content-box {
   width: 100%;
-  height: 100%;
-  border: 1.5px solid #c19e67;
+  padding: 90px 0px;
+  border: 1.5px solid #c19e67 !important;
+}
+
+#salam-pembuka {
+  margin-top: 30px;
+}
+
+#salam-pembuka h4 {
+  font-family: "Allura", cursive;
+  font-size: 27px;
+  color: #c19e67;
+}
+
+#salam-pembuka p {
+  color: #626262;
+  font-family: Gabriola;
+  font-size: 18px;
+}
+
+#button-acara {
+  margin-top: 20px;
+}
+
+.btn-waktu-pernikahan,
+.btn-waktu-resepsi {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
 }
 
 .separator-tengah {
+  width: 2px;
+  height: 100%;
+  background-color: black;
+  display: block;
+  margin: 0 auto;
+}
+
+.nama-acara {
+  font-size: 30px;
+  font-family: "Gabriola";
+  color: #111111;
+  text-transform: capitalize;
+  font-weight: 100 !important;
+  letter-spacing: normal;
+  padding-bottom: 20px;
+}
+
+.h5-acara {
+  color: #111111;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.p-acara {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin-top: 8px;
+  color: #a0824d;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+#acara-container {
+  margin: 20px 0px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+#acara-scroll {
+  width: 250px;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.acara-detail {
+  width: 500px;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  transform: translateX(0px);
+}
+
+#pernikahan,
+#resepsi {
+  width: 250px;
+  display: inline-block;
+  white-space: normal;
+}
+
+.waktu-box::after,
+.waktu-box::after,
+.waktu-box::after {
+  content: ":";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-weight: bold;
+}
+
+.waktu span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+}
+
+.waktu div {
+  color: #000000;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: -5px;
+}
+/* ======================== akhir waktu ======================== */
+/* ======================== maps ======================== */
+#maps {
+  text-align: center;
+}
+
+#maps-box {
+  margin-top: 30px;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+}
+
+#maps-pernikahan,
+#maps-resepsi {
+  width: 100%;
+}
+
+.btn-pernikahan,
+.btn-resepsi {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+}
+
+#button-maps {
+  margin-top: 30px;
+}
+
+.btn-maps {
+  margin: 0;
+  margin-top: 30px;
+  background: #c6ad7b;
+  border: 1px solid #c6ad7b;
+  border-radius: 0px;
+  color: #ffffff;
+}
+.btn-maps:hover {
+  margin: 0;
+  margin-top: 20px;
+  border: 1px solid #c6ad7b;
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+.maps-container {
+  width: 100%;
+  height: 500px;
+  padding: 15px;
+  border: 1.5px solid #c19e67 !important;
+}
+/* ======================== akhir maps ======================== */
+/* ======================== video ======================== */
+#video {
+  text-align: center;
+}
+
+#video-box {
+  margin-top: 30px;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+}
+
+.video-container {
+  height: 500px;
+}
+/* ======================== akhir video ======================== */
+/* ======================== gallery ======================== */
+#gallery {
+  text-align: center;
+}
+
+#gallery-box {
+  margin-top: 30px;
+}
+
+.img-gallery {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.carousel__track,
+.fancybox__counter,
+.fancybox__button--thumbs,
+/* .fancybox__button--slideshow, */
+.fancybox__button--fullscreen,
+.fancybox__button--zoom {
+  display: none !important;
+}
+/* ======================== akhir gallery ======================== */
+/* ======================== salam penutup ======================== */
+#salam-penutup {
+  text-align: center;
+}
+
+#salam-penutup-box {
+  width: 100% !important;
+}
+
+#salam-penutup p {
+  color: #626262;
+  font-family: Gabriola;
+  font-size: 18px;
+}
+
+#salam-penutup h4 {
+  font-family: "Allura", cursive;
+  font-size: 27px;
+  color: #c19e67;
+}
+
+/* ======================== akhir salam penutup ======================== */
+/* ======================== protokol ======================== */
+#protokol {
+  background-color: #e5e5e5;
+  margin-top: 0.5em;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+#protokol-box {
+  width: 100% !important;
+}
+
+.protokol-tittle {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2px;
-  height: 100%;
-  background-color: #b7ba83;
 }
 
-
-.button-waktu button {
-  font-size: 20px;
-  font-family: 'Josefin Sans', sans-serif;
+#protokol h4 {
+  font-family: "Gabriela", serif;
+  font-size: 16px;
+  text-decoration: underline;
+  color: #111111;
+}
+#protokol p,
+#protokol span {
+  color: #626262;
 }
 
+#protokol span {
+  text-align: left !important;
+}
 
-/* ======================== akhir waktu ======================== */
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.img-protokol {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.container-acara {
+  margin: 0;
+  margin-top: 30px;
+  padding: 40px;
+}
+/* ======================== akhir protokol ======================== */
+/* ========================  buku tamu ======================== */
+#buku-tamu {
+  text-align: center;
+}
+
+#wedding-gift-box,
+#buku-tamu-box {
+  width: 100% !important;
+}
+
+#buku-tamu-box {
+  padding-top: 90px;
+}
+
+.img-qr {
+  margin-top: 15px;
+  width: 200px;
+}
+
+.form-buku-tamu {
+  margin-top: 15px;
+}
+
+#nama,
+#pesan,
+#kehadiran {
+  border-radius: 2px;
+  border: 1px solid #c6ad7b;
+}
+
+.btn-tamu {
+  background: #c19e67;
+  color: #ffffff;
+  padding: 5px 25px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  border-radius: 0px;
+}
+
+#footer-box {
+  margin-top: 30px;
+}
+
+#footer-box a {
+  color: #000000;
+  text-decoration: underline;
+  font-family: "Montserrat", sans-serif;
+}
+
+#footer-box p {
+  font-family: "Montserrat", sans-serif;
+  line-height: 24px;
+  margin: 0;
+}
+
+#footer-box .btn-footer {
+  margin: 0;
+  margin-top: 40px;
+  text-decoration: none;
+  border: 1px solid #000000;
+  border-radius: 0px;
+}
+
+/* ======================== akhir buku tamu ======================== */
 /* ======================== navbar ======================== */
 .navbar-container {
   position: fixed;
@@ -214,3 +588,32 @@ span {
   padding-bottom: 10px;
 }
 /* ======================== akhir navbar ======================== */
+@media (max-width: 768px) {
+  .video-container {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 425px) {
+  .video-container {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .img-protokol {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  #protokol span {
+    font-size: 13px;
+  }
+
+  .video-container {
+    height: 200px;
+  }
+}

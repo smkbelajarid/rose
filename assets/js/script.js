@@ -7,41 +7,36 @@ $(document).ready(function () {
     $("#holy").show();
     $("#cover").hide();
   });
-  $("#btn-resepsi").css("color", "#7e7e7e");
+
+  // ==================== maps =====================
+  $(".btn-resepsi").css("color", "#7e7e7e");
   $("#maps-resepsi").hide();
 
-  $("#btn-resepsi").click(function () {
-    $("#btn-pernikahan").css("color", "#7e7e7e");
-    $("#btn-resepsi").css("color", "#000000");
+  $(".btn-resepsi").click(function () {
+    $(".btn-pernikahan").css("color", "#7e7e7e");
+    $(".btn-resepsi").css("color", "#000000");
     $("#maps-resepsi").show();
     $("#maps-pernikahan").hide();
   });
 
-  // jika button tulis di klik
-  $("#btn-pernikahan").click(function () {
-    $("#btn-resepsi").css("color", "#7e7e7e");
-    $("#btn-pernikahan").css("color", "#000000");
+  $(".btn-pernikahan").click(function () {
+    $(".btn-resepsi").css("color", "#7e7e7e");
+    $(".btn-pernikahan").css("color", "#000000");
     $("#maps-pernikahan").show();
     $("#maps-resepsi").hide();
   });
 
-  $("#btn-waktu-pernikahan").on("click", function () {
-    var now_position = $(this).attr("now-position");
-    var data_btn_1_text = $(this).attr("data-btn-1-text");
-    var data_btn_2_text = $(this).attr("data-btn-2-text");
-
-    if (now_position == "1") {
-      $(this).attr("now-position", "2");
-      $(this).html(data_btn_1_text);
-    } else {
-      $(this).attr("now-position", "1");
-      $(this).html(data_btn_2_text);
-    }
-
-    $(".mobile-detail").animate(
-      { scrollLeft: $("#waktu .mobile-detail #resepsi").offset().left },
-      1000
-    );
+  // ==================== acara =====================
+  $(".btn-waktu-resepsi").on("click", function () {
+    $("#acara #acara-scroll .acara-detail").css("transform", "translateX(" + -250 + "px)");
+    $("#btn-waktu-pernikahan").removeClass("active");
+    $(this).addClass("active");
+    console.log("ok");
+  });
+  $(".btn-waktu-pernikahan").on("click", function () {
+    $("#acara #acara-scroll .acara-detail").css("transform", "translateX(" + 0 + "px)");
+    $("#btn-waktu-resepsi").removeClass("active");
+    $(this).addClass("active");
   });
 });
 
@@ -88,20 +83,14 @@ var platform = new H.service.Platform({
 });
 var defaultLayers = platform.createDefaultLayers();
 var maptypes = platform.createDefaultLayers();
-var map = new H.Map(
-  document.getElementById("maps-container-pernikahan"),
-  maptypes.normal.map,
-  {
-    zoom: 14,
-    center: {
-      lng: 115.244156,
-      lat: -8.644065,
-    },
-  }
-);
-var icon = new H.map.Icon(
-  "https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png"
-);
+var map = new H.Map(document.getElementById("maps-container-pernikahan"), maptypes.normal.map, {
+  zoom: 14,
+  center: {
+    lng: 115.244156,
+    lat: -8.644065,
+  },
+});
+var icon = new H.map.Icon("https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png");
 var marker = new H.map.Marker(
   {
     lat: -8.644065,
@@ -123,20 +112,14 @@ var platform = new H.service.Platform({
 });
 var defaultLayers = platform.createDefaultLayers();
 var maptypes = platform.createDefaultLayers();
-var map = new H.Map(
-  document.getElementById("maps-container-resepsi"),
-  maptypes.normal.map,
-  {
-    zoom: 14,
-    center: {
-      lng: 115.241769,
-      lat: -8.636873,
-    },
-  }
-);
-var icon = new H.map.Icon(
-  "https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png"
-);
+var map = new H.Map(document.getElementById("maps-container-resepsi"), maptypes.normal.map, {
+  zoom: 14,
+  center: {
+    lng: 115.241769,
+    lat: -8.636873,
+  },
+});
+var icon = new H.map.Icon("https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png");
 var marker = new H.map.Marker(
   {
     lat: -8.636873,
