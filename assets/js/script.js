@@ -26,15 +26,76 @@ $(document).ready(function () {
     $("#maps-resepsi").hide();
   });
 
+  StartOrStopSongs();
+
+  function StartOrStopSongs(status) {
+    var audio = document.getElementById("wed-songs");
+    var btnSongPlay = document.getElementById("song-play");
+    var btnSongMute = document.getElementById("song-mute");
+
+    if (status == "mute") {
+      audio.pause();
+      btnSongPlay.classList.remove("active");
+      btnSongMute.classList.add("active");
+    } else {
+      audio.play();
+      btnSongMute.classList.remove("active");
+      btnSongPlay.classList.add("active");
+    }
+  }
+
+  windowScrollMainNav();
+
+  function windowScrollMainNav() {
+    $(window)
+      .scroll(function () {
+        var scrollDistance = $(window).scrollTop();
+        $(".section-bg").each(function (i) {
+          if ($(this).position().top <= scrollDistance) {
+            $(".navbar-container a.active").removeClass("active");
+            $(".navbar-container a").eq(i).addClass("active");
+          }
+        });
+      })
+      .scroll();
+  }
+
+  $(document).on("click", 'a[href*="#"]', function (e) {
+    e.preventDefault(); // prevent hard jump, the default behavior
+
+    var target = $(this).attr("href"); // Set the target as variable
+
+    // perform animated scrolling by getting top-position of target-element and set it as scroll target
+    $("html, body")
+      .stop()
+      .animate(
+        {
+          scrollTop: $(target).offset().top,
+        },
+        600,
+        function () {
+          location.hash = target; //attach the hash (#jumptarget) to the pageurl
+        }
+      );
+
+    return false;
+  });
+
   // ==================== acara =====================
   $(".btn-waktu-resepsi").on("click", function () {
-    $("#acara #acara-scroll .acara-detail").css("transform", "translateX(" + -250 + "px)");
+    $("#acara #acara-scroll .acara-detail").css(
+      "transform",
+      "translateX(" + -250 + "px)"
+    );
     $("#btn-waktu-pernikahan").removeClass("active");
     $(this).addClass("active");
     console.log("ok");
   });
   $(".btn-waktu-pernikahan").on("click", function () {
-    $("#acara #acara-scroll .acara-detail").css("transform", "translateX(" + 0 + "px)");
+    $("#acara #acara-scroll .acara-detail").css(
+      "transform",
+      "translateX(" + 0 + "px)"
+    );
     $("#btn-waktu-resepsi").removeClass("active");
     $(this).addClass("active");
   });
@@ -83,14 +144,20 @@ var platform = new H.service.Platform({
 });
 var defaultLayers = platform.createDefaultLayers();
 var maptypes = platform.createDefaultLayers();
-var map = new H.Map(document.getElementById("maps-container-pernikahan"), maptypes.normal.map, {
-  zoom: 14,
-  center: {
-    lng: 115.244156,
-    lat: -8.644065,
-  },
-});
-var icon = new H.map.Icon("https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png");
+var map = new H.Map(
+  document.getElementById("maps-container-pernikahan"),
+  maptypes.normal.map,
+  {
+    zoom: 14,
+    center: {
+      lng: 115.244156,
+      lat: -8.644065,
+    },
+  }
+);
+var icon = new H.map.Icon(
+  "https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png"
+);
 var marker = new H.map.Marker(
   {
     lat: -8.644065,
@@ -112,14 +179,20 @@ var platform = new H.service.Platform({
 });
 var defaultLayers = platform.createDefaultLayers();
 var maptypes = platform.createDefaultLayers();
-var map = new H.Map(document.getElementById("maps-container-resepsi"), maptypes.normal.map, {
-  zoom: 14,
-  center: {
-    lng: 115.241769,
-    lat: -8.636873,
-  },
-});
-var icon = new H.map.Icon("https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png");
+var map = new H.Map(
+  document.getElementById("maps-container-resepsi"),
+  maptypes.normal.map,
+  {
+    zoom: 14,
+    center: {
+      lng: 115.241769,
+      lat: -8.636873,
+    },
+  }
+);
+var icon = new H.map.Icon(
+  "https://www.weddingku.id/wp-content/themes/weddingku/images/webassets/map-marker.png"
+);
 var marker = new H.map.Marker(
   {
     lat: -8.636873,
