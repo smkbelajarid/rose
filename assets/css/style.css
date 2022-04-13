@@ -39,20 +39,6 @@ span {
   width: 100%;
   background: #797979;
 }
-.ornamnet-bawah {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.ornamnet-bawah img {
-  bottom: 0;
-  margin-bottom: 20px;
-  width: 270px;
-}
 
 .judul {
   font-family: "Allura", cursive;
